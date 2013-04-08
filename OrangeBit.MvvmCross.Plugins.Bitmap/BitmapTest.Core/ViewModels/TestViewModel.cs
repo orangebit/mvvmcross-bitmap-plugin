@@ -11,46 +11,57 @@ using Cirrious.CrossCore.IoC;
 
 namespace BitmapTest.Core.ViewModels
 {
-	public class TestViewModel : MvxViewModel
-	{
-		public TestViewModel ()
-		{
-			this.ConverterScenario ="MyValue";
+    public class TestViewModel : MvxViewModel
+    {
+        public TestViewModel()
+        {
+            this.ConverterScenario = "MyValue";
 
-			IMvxBitmapFactory factory = Mvx.Resolve<IMvxBitmapFactory>();
-			IMvxBitmap bitmap = factory.Create();
-			bitmap.LoadFromResource("BitmapTest.Core","BitmapTest.Core.Assets.droidking.jpeg");
+            IMvxBitmapFactory factory = Mvx.Resolve<IMvxBitmapFactory>();
+            IMvxBitmap bitmap = factory.Create();
+            bitmap.LoadFromResource("BitmapTest.Core",
+                new MvxResourcePath("BitmapTest",
+                    new MvxResourcePath("Core",
+                        new MvxResourcePath("Assets",
+                            new MvxResourcePath("droidking.jpeg", null, MvxResourcePathWhatIs.FileName),
+                            MvxResourcePathWhatIs.FolderName))) 
+                );
+           // bitmap.LoadFromResource("BitmapTest.Core", "BitmapTest.Core.Assets.droidking.jpeg");
 
-			this.PropertyScenario = bitmap;
-		}
+            this.PropertyScenario = bitmap;
+        }
 
 
 
-		private string _converterScenario;
+        private string _converterScenario;
 
 
-		public string ConverterScenario
-		{
-			get{
-				return _converterScenario;
-			}
-			set{
-				_converterScenario = value;
-				this.RaisePropertyChanged (() => this.ConverterScenario);
-			}
-		}
+        public string ConverterScenario
+        {
+            get
+            {
+                return _converterScenario;
+            }
+            set
+            {
+                _converterScenario = value;
+                this.RaisePropertyChanged(() => this.ConverterScenario);
+            }
+        }
 
-		private IMvxBitmap _propertyScenario=null;
-		public IMvxBitmap PropertyScenario
-		{
-			get{
-				return _propertyScenario;
-			}
-			set{
-				_propertyScenario = value;
-				this.RaisePropertyChanged (()=> this.PropertyScenario);
-			}
-		}
-	}
+        private IMvxBitmap _propertyScenario = null;
+        public IMvxBitmap PropertyScenario
+        {
+            get
+            {
+                return _propertyScenario;
+            }
+            set
+            {
+                _propertyScenario = value;
+                this.RaisePropertyChanged(() => this.PropertyScenario);
+            }
+        }
+    }
 }
 

@@ -20,7 +20,13 @@ namespace BitmapTest.Core.Converters
 				IMvxBitmapFactory factory = Mvx.Resolve<IMvxBitmapFactory>();
 				IMvxBitmap bitmap = factory.Create();
 
-				bitmap.LoadFromResource("BitmapTest.Core","BitmapTest.Core.Assets.droid.jpeg");
+                bitmap.LoadFromResource("BitmapTest.Core",
+                    new MvxResourcePath("BitmapTest",
+                        new MvxResourcePath("Core",
+                            new MvxResourcePath("Assets",
+                                new MvxResourcePath("droid.jpeg", null, MvxResourcePathWhatIs.FileName),
+                                MvxResourcePathWhatIs.FolderName)))
+                    );
 				return bitmap.ToNative();
 			}
 			else

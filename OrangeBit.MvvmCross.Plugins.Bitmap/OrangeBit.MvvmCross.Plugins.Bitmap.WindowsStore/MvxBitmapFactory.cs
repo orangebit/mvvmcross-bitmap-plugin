@@ -5,19 +5,17 @@
 // Project Lead - Sebastian Faltoni, sebastian(at)orangebit.it
 
 using System;
+using OrangeBit.MvvmCross.Plugins.Bitmap;
 
-namespace OrangeBit.MvvmCross.Plugins.Bitmap
+namespace OrangeBit.MvvmCross.Plugins.Bitmap.WindowsStore
 {
-	public interface IMvxBitmap
-	{
-		void SetSource(byte[] bytes);
+	public class MvxBitmapFactory: IMvxBitmapFactory
+	{ 
+		public IMvxBitmap Create()
+		{
+			return new MvxWindowsStoreBitmap();
+		}
 
-        void LoadFromResource(string assemblyName, MvxResourcePath resourceName);
-
-		int Height { get; }
-		int Width { get;}
-
-		object ToNative();
 	}
 }
 
