@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7F0C747A-9282-4678-99C0-3CCC27C86E29}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>BitmapTest.Droid</RootNamespace>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AssemblyName>BitmapTest.Droid</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="Cirrious.CrossCore">
+      <HintPath>..\..\Deps\MvvmCross\XS-iOS-Mac\bin\Debug\Mvx\Portable\Cirrious.CrossCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Binding">
+      <HintPath>..\..\Deps\MvvmCross\XS-iOS-Mac\bin\Debug\Mvx\Portable\Cirrious.MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross">
+      <HintPath>..\..\Deps\MvvmCross\XS-iOS-Mac\bin\Debug\Mvx\Portable\Cirrious.MvvmCross.dll</HintPath>
+    </Reference>
+    <Reference Include="OrangeBit.MvvmCross.Plugins.Bitmap">
+      <HintPath>..\OrangeBit.MvvmCross.Plugins.Bitmap\bin\Debug\OrangeBit.MvvmCross.Plugins.Bitmap.dll</HintPath>
+    </Reference>
+    <Reference Include="BitmapTest.Core">
+      <HintPath>..\BitmapTest.Core\bin\Debug\BitmapTest.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CrossUI.Core">
+      <HintPath>..\..\Deps\MvvmCross\VS2012\bin\Debug\Mvx\Droid\CrossUI.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CrossUI.Droid">
+      <HintPath>..\..\Deps\MvvmCross\VS2012\bin\Debug\Mvx\Droid\CrossUI.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Droid">
+      <HintPath>..\..\Deps\MvvmCross\VS2012\bin\Debug\Mvx\Droid\Cirrious.MvvmCross.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.CrossCore.Droid">
+      <HintPath>..\..\Deps\MvvmCross\VS2012\bin\Debug\Mvx\Droid\Cirrious.CrossCore.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Deps\MvvmCross\VS2012\bin\Debug\Mvx\Portable\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Json">
+      <HintPath>..\..\Deps\MvvmCross\VS2012\bin\Debug\Mvx\Portable\Cirrious.MvvmCross.Plugins.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Setup.cs" />
+    <Compile Include="SplashScreenActivity.cs" />
+    <Compile Include="Views\TestView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.xml" />
+    <AndroidResource Include="Resources\drawable\Icon.png" />
+    <AndroidResource Include="Resources\layout\SplashScreen.axml" />
+    <AndroidResource Include="Resources\layout\Page_TestLayout.axml" />
+    <AndroidResource Include="Resources\values\MvxBindingAttributes.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\OrangeBit.MvvmCross.Plugins.Bitmap.Droid\OrangeBit.MvvmCross.Plugins.Bitmap.Droid.csproj">
+      <Project>{D3360D92-A7F4-4C54-A06C-D5AE5530FB1D}</Project>
+      <Name>OrangeBit.MvvmCross.Plugins.Bitmap.Droid</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
+  </ItemGroup>
+</Project>
