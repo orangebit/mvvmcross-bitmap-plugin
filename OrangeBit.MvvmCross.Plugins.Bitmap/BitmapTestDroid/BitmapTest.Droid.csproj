@@ -42,14 +42,23 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
+    <Reference Include="Cirrious.CrossCore.Droid">
+      <HintPath>..\..\Deps\Mvx\Droid\Cirrious.CrossCore.Droid.dll</HintPath>
+    </Reference>
     <Reference Include="Cirrious.CrossCore">
-      <HintPath>..\..\Deps\MvvmCross\XS-iOS-Mac\bin\Debug\Mvx\Portable\Cirrious.CrossCore.dll</HintPath>
+      <HintPath>..\..\Deps\Mvx\Droid\Cirrious.CrossCore.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Binding">
-      <HintPath>..\..\Deps\MvvmCross\XS-iOS-Mac\bin\Debug\Mvx\Portable\Cirrious.MvvmCross.Binding.dll</HintPath>
+      <HintPath>..\..\Deps\Mvx\Droid\Cirrious.MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Droid">
+      <HintPath>..\..\Deps\Mvx\Droid\Cirrious.MvvmCross.Droid.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross">
-      <HintPath>..\..\Deps\MvvmCross\XS-iOS-Mac\bin\Debug\Mvx\Portable\Cirrious.MvvmCross.dll</HintPath>
+      <HintPath>..\..\Deps\Mvx\Droid\Cirrious.MvvmCross.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Binding.Droid">
+      <HintPath>..\..\Deps\Mvx\Droid\Cirrious.MvvmCross.Binding.Droid.dll</HintPath>
     </Reference>
     <Reference Include="OrangeBit.MvvmCross.Plugins.Bitmap">
       <HintPath>..\OrangeBit.MvvmCross.Plugins.Bitmap\bin\Debug\OrangeBit.MvvmCross.Plugins.Bitmap.dll</HintPath>
@@ -57,23 +66,11 @@
     <Reference Include="BitmapTest.Core">
       <HintPath>..\BitmapTest.Core\bin\Debug\BitmapTest.Core.dll</HintPath>
     </Reference>
-    <Reference Include="CrossUI.Core">
-      <HintPath>..\..\Deps\MvvmCross\VS2012\bin\Debug\Mvx\Droid\CrossUI.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="CrossUI.Droid">
-      <HintPath>..\..\Deps\MvvmCross\VS2012\bin\Debug\Mvx\Droid\CrossUI.Droid.dll</HintPath>
-    </Reference>
-    <Reference Include="Cirrious.MvvmCross.Droid">
-      <HintPath>..\..\Deps\MvvmCross\VS2012\bin\Debug\Mvx\Droid\Cirrious.MvvmCross.Droid.dll</HintPath>
-    </Reference>
-    <Reference Include="Cirrious.CrossCore.Droid">
-      <HintPath>..\..\Deps\MvvmCross\VS2012\bin\Debug\Mvx\Droid\Cirrious.CrossCore.Droid.dll</HintPath>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Json">
+      <HintPath>..\..\Deps\Mvx\Portable\Cirrious.MvvmCross.Plugins.Json.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\Deps\MvvmCross\VS2012\bin\Debug\Mvx\Portable\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Cirrious.MvvmCross.Plugins.Json">
-      <HintPath>..\..\Deps\MvvmCross\VS2012\bin\Debug\Mvx\Portable\Cirrious.MvvmCross.Plugins.Json.dll</HintPath>
+      <HintPath>..\..\Deps\Mvx\Portable\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

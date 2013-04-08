@@ -26,8 +26,9 @@ namespace OrangeBit.MvvmCross.Plugins.Bitmap.Droid
 			bitmap = BitmapFactory.DecodeByteArray(bytes, 0, bytes.Length);
 		}
 
-		public void LoadFromResource(string assemblyName,string resourceName)
+		public void LoadFromResource(string assemblyName,MvxResourcePath resourcePath)
 		{
+			var resourceName = resourcePath.GetResourcePath (".",true);
 			var strm = Assembly.Load (new AssemblyName(assemblyName)).GetManifestResourceStream(resourceName);
 
 			bitmap = BitmapFactory.DecodeStream (strm);
